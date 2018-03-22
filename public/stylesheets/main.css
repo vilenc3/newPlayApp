@@ -1,0 +1,30 @@
+body {
+    background-color: #2e2e2e !important;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+main {
+    margin-left: auto;
+    margin-right: auto;
+    /* border: #AAA 1px solid; */
+    width: 1280px;
+    padding: 10px;
+    color: #FFFFFF;
+}
+
+form {
+    margin-left: auto;
+    margin-right: auto;
+    /* border: #AAA 1px solid; */
+    width: 600px;
+    text-align: center;
+}
+
+.cntr {
+    text-align: center;
+}
+
+.btn{
+    background-color: #555555;
+    color: white;
+}
