@@ -31,4 +31,7 @@ public class HomeController extends Controller {
     public Result contact() {
         return ok(views.html.contact.render());
     }
+    public Result login() {
+        return ok(views.html.login.render());
+    }
 }
