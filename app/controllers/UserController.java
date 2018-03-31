@@ -20,7 +20,7 @@ public class UserController extends Controller{
     /* * /
     @Inject
     FormFactory formFactory;
-
+    /* * /
     public Result index(User u){
         Set<Book> cart = u.getCart();
         return ok(index.render(cart));
