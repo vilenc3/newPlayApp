@@ -22,6 +22,7 @@
                 <td>@book.title</td>
                 <td>@book.price $</td>
                 <td>@book.author</td>
+                <td><a type="button" href="@routes.BooksController.deleteFromCart(book.id)" class="btn btn-secondary">Delete from cart</a></td>
             </tr>
         }
             </tbody>
@@ -29,6 +30,7 @@
         <div class="form-row text-center">
             <div class="col-12">
                 <button type="submit" class="btn btn-primary btn-lg" href="@routes.BooksController.clearCart()">Buy</button>
+
             </div>
         </div>
         <hr>
