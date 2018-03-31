@@ -1,36 +1,29 @@
 package controllers;
+
 import models.Book;
+import models.User;
 import play.data.Form;
 import play.data.FormFactory;
-import play.filters.csrf.CSRF;
-import play.mvc.Result;
 import play.mvc.Controller;
-import java.util.Set;
-import javax.inject.Inject;
-import views.html.books.*;
+import play.mvc.Result;
+import views.html.books.create;
+import views.html.books.edit;
 import views.html.books.index;
+import views.html.books.show;
+
+import javax.inject.Inject;
+import java.util.Set;
 
 //import views.html.index;
 
-public class BooksController extends Controller{
-
+public class UserController extends Controller{
+    /* * /
     @Inject
     FormFactory formFactory;
 
-    public Result index(){
-        Set<Book> books = Book.retrieveAll();
-        return ok(index.render(books));
-    }
-
-    public Result cart(){
-        Set<Book> books = Book.retrieveCart();
-        return ok(cart.render(books));
-    }
-
-    public Result addToCart(Integer id){
-        Book book = Book.retrieveById(id);
-        Book.addtoCart(book);
-        return redirect(routes.BooksController.index());
+    public Result index(User u){
+        Set<Book> cart = u.getCart();
+        return ok(index.render(cart));
     }
 
     public Result create(){
@@ -38,16 +31,10 @@ public class BooksController extends Controller{
         return ok(create.render(bookForm));
     }
 
-    public Result clearCart(){
-        Book.clearCart();
-        return redirect(routes.BooksController.index());
-    }
-
-    public Result save(){
-        Form<Book> bookForm = formFactory.form(Book.class).bindFromRequest();
+    public Result save(User u){
         Book book = bookForm.get();
-        Book.add(book);
-        return redirect(routes.BooksController.index());
+        u.cart.add(book);
+        return redirect(UserController.index());
     }
 
     public Result edit(Integer id){
@@ -69,7 +56,7 @@ public class BooksController extends Controller{
         oldBook.price = book.price;
         oldBook.author = book.author;
 
-        return redirect(routes.BooksController.index());
+        return redirect(UserController.index());
     }
 
     public Result show(Integer id){
@@ -86,7 +73,7 @@ public class BooksController extends Controller{
             return notFound("Book not found");
         }
         Book.remove(book);
-        return redirect(routes.BooksController.index());
+        return redirect(UserController.index());
     }
-
+    /* */
 }

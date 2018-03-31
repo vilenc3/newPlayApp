@@ -1,0 +1,36 @@
+@(cart: Set[Book])
+@main("My cart"){
+    <h1>Cart:</h1>
+        @*<a href="@routes.BooksController.show(book.id)">@book.title</a>*@
+        @*<p>Price: @book.price</p>*@
+        @*<p>Author: @book.author</p>*@
+    @*}*@
+    @*<a href="@routes.BooksController.create()">Create Book</a>*@
+    <div class="container">
+            <!-- Example row of columns -->
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Author</th>
+                </tr>
+            </thead>
+            <tbody>
+        @for(book <- cart) {
+            <tr>
+                <td>@book.title</td>
+                <td>@book.price $</td>
+                <td>@book.author</td>
+            </tr>
+        }
+            </tbody>
+        </table>
+        <div class="form-row text-center">
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary btn-lg" href="@routes.BooksController.clearCart()">Buy</button>
+            </div>
+        </div>
+        <hr>
+    </div> <!-- /container -->
+}
