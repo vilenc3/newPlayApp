@@ -1,4 +1,5 @@
 @(books: Set[Book])
+
 @main("Products"){
     <h1>All Books:</h1>
         @*<a href="@routes.BooksController.show(book.id)">@book.title</a>*@
@@ -13,7 +14,7 @@
             <div class="col-md-4">
                 <h2 id="prod1_name">@book.title</h2>
                 <p id="prod1_desc">@book.price</p>
-                <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+                <p><a class="btn btn-secondary" href="@routes.BooksController.addToCart(book.id)" role="button">Add to cart</a></p>
             </div>
         }
         </div>

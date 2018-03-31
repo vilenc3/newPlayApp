@@ -23,8 +23,9 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 
 
 GET     /books                      controllers.BooksController.index()
+GET     /books/cart                 controllers.BooksController.cart()
 GET     /books/create               controllers.BooksController.create()
-GET     /books/:id                  controllers.BooksController.show(id : Integer)
+GET     /books/:id                  controllers.BooksController.addToCart(id : Integer)
 GET     /books/edit/:id             controllers.BooksController.edit(id : Integer)
 POST    /books/edit                 controllers.BooksController.update()
 POST    /books/create               controllers.BooksController.save()
