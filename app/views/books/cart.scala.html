@@ -8,14 +8,27 @@
     @*<a href="@routes.BooksController.create()">Create Book</a>*@
     <div class="container">
             <!-- Example row of columns -->
-        <ul class="list-group">
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Author</th>
+                </tr>
+            </thead>
+            <tbody>
         @for(book <- cart) {
-                <li class="list-group-item-dark">@book.title, Price: @book.price $</li>
+            <tr>
+                <td>@book.title</td>
+                <td>@book.price $</td>
+                <td>@book.author</td>
+            </tr>
         }
-        </ul>
+            </tbody>
+        </table>
         <div class="form-row text-center">
             <div class="col-12">
-                <button type="submit" class="btn btn-primary btn-lg">Buy</button>
+                <button type="submit" class="btn btn-primary btn-lg" href="@routes.BooksController.clearCart()">Buy</button>
             </div>
         </div>
         <hr>

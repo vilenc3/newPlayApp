@@ -27,8 +27,10 @@ public class Book {
     static {
         books = new HashSet<>();
         cart = new HashSet<>();
-        books.add(new Book(1, "BookTitle", 20, "ABCD"));
-        books.add(new Book(2, "BookNewTitle", 30, "DBCD"));
+        books.add(new Book(1, "The Trial", 20, "Franz Kafka"));
+        books.add(new Book(2, "Silmarillion", 15, "J R R Tolkien"));
+        books.add(new Book(3, "The Odyssey", 25, "Homer"));
+        books.add(new Book(4, "War and Peace", 30, "Leo Tolstoy"));
     }
 
     public static Set<Book> retrieveAll(){
@@ -37,6 +39,10 @@ public class Book {
 
     public static Set<Book> retrieveCart(){
         return cart;
+    }
+
+    public static void clearCart(){
+        cart = new HashSet<>();
     }
 
     public static Book retrieveById(Integer id) {

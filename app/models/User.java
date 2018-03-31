@@ -9,7 +9,9 @@ public class User {
     public String password;
     public String name;
 
+
     public Set<Book> cart;
+    public static Set<User> users;
 
     public User(){
 
@@ -22,6 +24,13 @@ public class User {
         this.name = name;
         this.cart = new HashSet<>();
     }
+
+    static {
+        users = new HashSet<>();
+        users.add(new User(2, "user@test.test", "pass", "user"));
+        users.add(new User(1, "admin@test.test", "pass", "admin"));
+    }
+
 
     public Set<Book> getCart(){
         return cart;

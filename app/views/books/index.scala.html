@@ -13,7 +13,8 @@
         @for(book <- books) {
             <div class="col-md-4">
                 <h2 id="prod1_name">@book.title</h2>
-                <p id="prod1_desc">@book.price</p>
+                <p id="prod1_desc">Price: @book.price $</p>
+                <p id="prod1_desc">Author: @book.author</p>
                 <p><a class="btn btn-secondary" href="@routes.BooksController.addToCart(book.id)" role="button">Add to cart</a></p>
             </div>
         }

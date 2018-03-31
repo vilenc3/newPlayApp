@@ -38,6 +38,11 @@ public class BooksController extends Controller{
         return ok(create.render(bookForm));
     }
 
+    public Result clearCart(){
+        Book.clearCart();
+        return redirect(routes.BooksController.index());
+    }
+
     public Result save(){
         Form<Book> bookForm = formFactory.form(Book.class).bindFromRequest();
         Book book = bookForm.get();

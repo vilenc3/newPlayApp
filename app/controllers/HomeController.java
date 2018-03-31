@@ -2,7 +2,7 @@ package controllers;
 
 import play.mvc.*;
 import views.html.*;
-import views.html.products.*;
+
 
 /**
  * This controller contains an action to handle HTTP requests
@@ -21,12 +21,6 @@ public class HomeController extends Controller {
     }
     public Result home() {
         return ok(views.html.index.render());
-    }
-    public Result form() {
-        return ok(views.html.form.render());
-    }
-    public Result products() {
-        return ok(views.html.products.render());
     }
     public Result contact() {
         return ok(views.html.contact.render());

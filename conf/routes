@@ -14,8 +14,6 @@ GET     /message                    controllers.AsyncController.message
 # ~~~~
 GET     /contact                    controllers.HomeController.contact
 GET     /home                       controllers.HomeController.home
-GET     /products                   controllers.HomeController.products
-GET     /form                       controllers.HomeController.form
 GET     /login                      controllers.HomeController.login
 
 # Map static resources from the /public folder to the /assets URL path
@@ -24,6 +22,8 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 
 GET     /books                      controllers.BooksController.index()
 GET     /books/cart                 controllers.BooksController.cart()
+# TODO: How to do this? Should clear cart.
+GET     /books/clearCart            controllers.BooksController.clearCart()
 GET     /books/create               controllers.BooksController.create()
 GET     /books/:id                  controllers.BooksController.addToCart(id : Integer)
 GET     /books/edit/:id             controllers.BooksController.edit(id : Integer)
