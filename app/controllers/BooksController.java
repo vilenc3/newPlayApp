@@ -89,4 +89,12 @@ public class BooksController extends Controller{
         return redirect(routes.BooksController.index());
     }
 
+    public Result deleteFromCart(Integer id){
+        Book book = Book.retrieveById(id);
+        if (book == null){
+            return notFound("Book not found");
+        }
+        Book.removeFromCart(book);
+        return redirect(routes.BooksController.cart());
+    }
 }
