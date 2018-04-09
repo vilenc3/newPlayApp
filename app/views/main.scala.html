@@ -25,15 +25,23 @@
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#">PWr</a>
+                    <a class="navbar-brand" href="#">BestBookstore.com</a>
                 </div>
                 <ul class="nav navbar-nav navbar-middle">
+                    <li> <img src="@routes.Assets.versioned("images/home.png")" class="submenu-img"></li>
                     <li><a href="@routes.HomeController.home">Home</a></li>
+                    <li><img src="@routes.Assets.versioned("images/book.png")" class="submenu-img"></li>
                     <li><a href="@routes.BooksController.index()">Books</a></li>
+                    <li><img src="@routes.Assets.versioned("images/about.png")" class="submenu-img"></li>
+                    <li><a href="@routes.HomeController.about">About</a></li>
+                    <li><img src="@routes.Assets.versioned("images/contact.png")" class="submenu-img"></li>
                     <li><a href="@routes.HomeController.contact">Contact</a></li>
+
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
+                    <li><img src="@routes.Assets.versioned("images/cart.png")" class="submenu-img"></li>
                     <li><a href="@routes.BooksController.cart()">My Cart</a></li>
+                    <li><img src="@routes.Assets.versioned("images/login.png")" class="submenu-img"></li>
                     <li><a href="@routes.HomeController.login">Login</a></li>
                 </ul>
             </div>

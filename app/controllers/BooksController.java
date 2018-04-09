@@ -5,10 +5,13 @@ import play.data.FormFactory;
 import play.filters.csrf.CSRF;
 import play.mvc.Result;
 import play.mvc.Controller;
+
+import java.util.List;
 import java.util.Set;
 import javax.inject.Inject;
 import views.html.books.*;
 import views.html.books.index;
+
 
 //import views.html.index;
 
@@ -18,7 +21,7 @@ public class BooksController extends Controller{
     FormFactory formFactory;
 
     public Result index(){
-        Set<Book> books = Book.retrieveAll();
+        List<Book> books = Book.find.all();
         return ok(index.render(books));
     }
 
@@ -46,12 +49,12 @@ public class BooksController extends Controller{
     public Result save(){
         Form<Book> bookForm = formFactory.form(Book.class).bindFromRequest();
         Book book = bookForm.get();
-        Book.add(book);
+        book.save();
         return redirect(routes.BooksController.index());
     }
 
     public Result edit(Integer id){
-        Book book = Book.retrieveById(id);
+        Book book = Book.find.byId(id);
         if (book==null){
             return notFound("Book not found!");
         }
@@ -61,19 +64,20 @@ public class BooksController extends Controller{
 
     public Result update(){
         Book book = formFactory.form(Book.class).bindFromRequest().get();
-        Book oldBook = Book.retrieveById(book.id);
+        Book oldBook = Book.find.byId(book.id);
         if (oldBook == null){
             return notFound("Book not found!");
         }
         oldBook.title = book.title;
         oldBook.price = book.price;
         oldBook.author = book.author;
+        oldBook.update();
 
         return redirect(routes.BooksController.index());
     }
 
     public Result show(Integer id){
-        Book book = Book.retrieveById(id);
+        Book book = Book.find.byId(id);
         if (book == null) {
             return notFound("Book not found");
         }
@@ -81,11 +85,11 @@ public class BooksController extends Controller{
     }
 
     public Result delete(Integer id){
-        Book book = Book.retrieveById(id);
+        Book book = Book.find.byId(id);
         if (book == null){
             return notFound("Book not found");
         }
-        Book.remove(book);
+        book.delete();
         return redirect(routes.BooksController.index());
     }
 

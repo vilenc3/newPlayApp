@@ -4,11 +4,23 @@
 @main("Home") {
     <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
         <div role="main" class="inner-cover cntr">
-            <h1 class="cover-heading">Home page.</h1>
-            <p class="lead">So, there is no content here, fill free to fill it up. See that button below, it will take to to product list.</p>
+            <h1 class="cover-heading">Welcome to the best bookstore on the web!</h1>
+            <br>
+            <div class="col-sm-12 text-center">
+                <img src="@routes.Assets.versioned("images/main.png")" class="img-responsive">
+                <br>
+                <br>
+
+            </div>
+
+            <p class="lead">Browse our wide selection <br> of books and find something for yourself! </p>
+
             <p class="lead">
-                <a href="@routes.BooksController.index()" class="btn btn-lg btn-secondary">Books</a  >
+                <a href="@routes.BooksController.index()" class="btn btn-lg btn-secondary">Start now!
+                    <img src="@routes.Assets.versioned("images/glass.png")" class="button-img"></a>
             </p>
+
         </div>
     </div>
+
 }

@@ -5,7 +5,6 @@
 
         <h1>Add new book:</h1>
         @helper.form(CSRF(routes.BooksController.save())){
-            @helper.inputText(bookForm("id"))
             @helper.inputText(bookForm("title"))
             @helper.inputText(bookForm("price"))
             @helper.inputText(bookForm("author"))

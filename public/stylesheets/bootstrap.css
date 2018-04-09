@@ -6754,4 +6754,28 @@ button.close {
     display: none !important;
   }
 }
+
+.img-responsive {
+  display: inline-block;
+}
 /*# sourceMappingURL=bootstrap.css.map */
+
+
+.submenu-img {
+
+  position: inherit;
+  padding: 10px 0 10px 0;
+  margin-left: 40%;
+  display:inline-block; /* add this rule */
+  margin-right: 10%;
+  text-align:center;
+}
+
+.button-img {
+
+  position: inherit;
+  padding: 10px 0 10px 0;
+  margin-left: 5px;
+  display:inline-block; /* add this rule */
+  text-align:center;
+}

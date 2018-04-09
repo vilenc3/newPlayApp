@@ -1,0 +1,27 @@
+@()
+
+
+@main("About") {
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+        <div role="main" class="inner-cover cntr">
+            <h1 class="cover-heading">About us</h1>
+            <br>
+            <div class="col-sm-12 text-center">
+                <img src="@routes.Assets.versioned("images/greeting.png")" class="img-responsive">
+                <br>
+                <br>
+
+            </div>
+
+            <p class="lead">We are group of people who love books and believe they should be available for everyone! <br>
+            We started as a small bookstore in Wrocław in 2010 and went online in 2007. In our bookstore your can find wide range of books
+                from popular authors and new sensations.<br> Want to know more? Feel free to contact us!</p>
+
+            <p class="lead">
+                <a href="@routes.HomeController.contact()" class="btn btn-lg btn-secondary">Contact!</a  >
+            </p>
+
+        </div>
+    </div>
+
+}

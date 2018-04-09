@@ -1,0 +1,13 @@
+@(registerForm : Form[User])
+@import helper._
+
+@main("Create new account"){
+
+    <h1>Add new account:</h1>
+    @helper.form(CSRF(routes.UserController.save())){
+        @helper.inputText(registerForm("username"))
+        @helper.inputText(registerForm("email"))
+        @helper.inputText(registerForm("password"))
+        <input type="submit" class="btn btn-default" value="Create User"/>
+    }
+}

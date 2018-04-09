@@ -1,22 +1,38 @@
 package controllers;
 
-import models.Book;
 import models.User;
 import play.data.Form;
 import play.data.FormFactory;
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.books.create;
-import views.html.books.edit;
-import views.html.books.index;
-import views.html.books.show;
+import play.filters.csrf.CSRF;
+import views.html.*;
+
+import views.html.register;
 
 import javax.inject.Inject;
-import java.util.Set;
+
 
 //import views.html.index;
 
 public class UserController extends Controller{
+    @Inject
+    FormFactory formFactory;
+
+    public Result create(){
+        Form<User> registerForm = formFactory.form(User.class);
+        return ok(register.render(registerForm));
+        /*Form<Book> bookForm = formFactory.form(Book.class);
+        return ok(create.render(bookForm));*/
+    }
+
+    public Result save(){
+        Form<User> registerForm = formFactory.form(User.class).bindFromRequest();
+        User user = registerForm.get();
+        user.save();
+        return redirect(routes.HomeController.home());
+    }
+}
     /* * /
     @Inject
     FormFactory formFactory;
@@ -76,4 +92,4 @@ public class UserController extends Controller{
         return redirect(UserController.index());
     }
     /* */
-}
+
