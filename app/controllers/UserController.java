@@ -32,6 +32,13 @@ public class UserController extends Controller{
         user.save();
         return redirect(routes.HomeController.home());
     }
+
+    public Result login(){
+        Form<User> loginForm = formFactory.form(User.class);
+        return ok(login.render(loginForm));
+        /*Form<Book> bookForm = formFactory.form(Book.class);
+        return ok(create.render(bookForm));*/
+    }
 }
     /* * /
     @Inject

@@ -17,6 +17,7 @@
                 <p id="prod1_desc">Price: @book.price $</p>
                 <p id="prod1_desc">Author: @book.author</p>
                 <div class="btn-group">
+                    <a type="button" href="@routes.BooksController.show(book.id)" class="btn btn-secondary">View</a>
                     <a type="button" href="@routes.BooksController.addToCart(book.id)" class="btn btn-secondary">Add to cart</a>
                     <a type="button" href="@routes.BooksController.edit(book.id)" class="btn btn-secondary">Edit</a>
                     <a type="button" href="@routes.BooksController.delete(book.id)" class="btn btn-secondary">Delete</a>
