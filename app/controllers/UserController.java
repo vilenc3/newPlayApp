@@ -36,8 +36,6 @@ public class UserController extends Controller{
     public Result login(){
         Form<User> loginForm = formFactory.form(User.class);
         return ok(login.render(loginForm));
-        /*Form<Book> bookForm = formFactory.form(Book.class);
-        return ok(create.render(bookForm));*/
     }
 }
     /* * /

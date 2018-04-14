@@ -72,6 +72,7 @@ public class Book extends Model{
     public static boolean remove(Book book){
         return books.remove(book);
     }
+
     public static boolean removeFromCart(Book book){
         return cart.remove(book);
     }
